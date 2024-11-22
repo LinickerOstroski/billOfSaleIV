@@ -1,5 +1,6 @@
 package view;
 
+import model.CreditCard;
 import model.Product;
 import model.SaleManager;
 import model.Stock;
@@ -38,6 +39,7 @@ public class Main {
 			
 			System.out.println("Dados do Estoque:");
 			System.out.println(stock1.toString());
+			System.out.println(saleManager.getSale().getTotal(new CreditCard()));
 			
 			}else {
 			System.out.println("Quantidade insuficiente no estoque");

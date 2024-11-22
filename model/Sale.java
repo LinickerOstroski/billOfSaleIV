@@ -10,11 +10,14 @@ public class Sale {
 		items.add(item);
 	}
 	
-	public double getTotal() {
+	public double getTotal(Payment payment) {
 		double total = 0;
-		for (SaleItem saleItem : items) 
+		
+		for (SaleItem saleItem : items) {
 			total += saleItem.getSubtotal();
-		return total;
+		}
+		
+		return payment.paymentMethod(total);
 	}
 	
 	public List<SaleItem> getItems() {
@@ -23,7 +26,7 @@ public class Sale {
 
 	@Override
 	public String toString() {
-		return "Itens de venda: " + items.toString();
+		return items.toString();
 	}
 	
 	
